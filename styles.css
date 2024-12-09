@@ -8,6 +8,25 @@ body {
     margin-bottom: 20px;
 }
 
+.sort {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.order-btn {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.order-btn:hover {
+    background-color: #0056b3;
+}
+
 .character-list {
     display: flex;
     flex-wrap: wrap;
