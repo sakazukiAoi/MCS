@@ -1,1 +1,41 @@
 
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>キャラクターリスト</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="filter">
+        <label>
+            <input type="checkbox" id="male" checked> 男
+        </label>
+        <label>
+            <input type="checkbox" id="female" checked> 女
+        </label>
+        <label>
+            <input type="checkbox" id="other" checked> 他
+        </label>
+    </div>
+
+    <div class="sort">
+        <label for="sort-select">並び替え:</label>
+        <select id="sort-select">
+            <option value="creation">作成順</option>
+            <option value="name">名前順</option>
+            <option value="desc">降順</option>
+            <option value="asc">昇順</option>
+            <option value="age">年齢順</option>
+            <option value="str">STR順</option>
+        </select>
+    </div>
+
+    <div id="character-list" class="character-list">
+        <!-- 各キャラクターの情報 -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
