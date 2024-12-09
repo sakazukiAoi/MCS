@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -21,19 +20,19 @@
     </div>
 
     <div class="sort">
-        <label for="sort-select">並び替え:</label>
+        <label for="sort-select">並び替え項目:</label>
         <select id="sort-select">
-            <option value="creation">作成順</option>
             <option value="name">名前順</option>
-            <option value="desc">降順</option>
-            <option value="asc">昇順</option>
             <option value="age">年齢順</option>
             <option value="str">STR順</option>
         </select>
+        <button id="toggle-order" class="order-btn">
+            昇順 ▼
+        </button>
     </div>
 
     <div id="character-list" class="character-list">
-        <!-- 各キャラクターの情報 -->
+        <!-- キャラクターリスト -->
     </div>
 
     <script src="script.js"></script>
