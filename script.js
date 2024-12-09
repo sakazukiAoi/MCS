@@ -1,16 +1,18 @@
 const characters = [
-    { id: 1, name: "キャラ1", gender: "male", age: 20, str: 15, img: "画像/アイコン/1png" },
-    { id: 2, name: "キャラ2", gender: "female", age: 25, str: 10, img: "画像/アイコン/3png" },
-    { id: 3, name: "キャラ3", gender: "other", age: 30, str: 20, img: "画像/アイコン/4png" },
+    { id: 1, name: "あただ", gender: "male", age: 20, str: 15, img: "画像/アイコン/1png" },
+    { id: 2, name: "なら", gender: "female", age: 25, str: 10, img: "画像/アイコン/3png" },
+    { id: 3, name: "ゆう", gender: "other", age: 30, str: 20, img: "画像/アイコン/4png" },
     // 追加キャラクター
 ];
+let isAscending = true; // 昇順か降順かのフラグ
+
 
 const characterList = document.getElementById("character-list");
 const maleCheckbox = document.getElementById("male");
 const femaleCheckbox = document.getElementById("female");
 const otherCheckbox = document.getElementById("other");
 const sortSelect = document.getElementById("sort-select");
-
+const toggleOrderBtn = document.getElementById("toggle-order");
 function renderCharacters() {
     characterList.innerHTML = "";
     let filteredCharacters = characters.filter(char => {
@@ -21,13 +23,17 @@ function renderCharacters() {
     });
 
     const sortValue = sortSelect.value;
-    if (sortValue === "name") {
-        filteredCharacters.sort((a, b) => a.name.localeCompare(b.name));
-    } else if (sortValue === "age") {
-        filteredCharacters.sort((a, b) => a.age - b.age);
-    } else if (sortValue === "str") {
-        filteredCharacters.sort((a, b) => a.str - b.str);
-    }
+    filteredCharacters.sort((a, b) => {
+        let comparison = 0;
+        if (sortValue === "name") {
+            comparison = a.name.localeCompare(b.name);
+        } else if (sortValue === "age") {
+            comparison = a.age - b.age;
+        } else if (sortValue === "str") {
+            comparison = a.str - b.str;
+        }
+        return isAscending ? comparison : -comparison; // 昇順または降順を切り替え
+    });
 
     filteredCharacters.forEach(char => {
         const card = document.createElement("div");
@@ -42,6 +48,12 @@ function renderCharacters() {
         characterList.appendChild(card);
     });
 }
+
+toggleOrderBtn.addEventListener("click", () => {
+    isAscending = !isAscending;
+    toggleOrderBtn.textContent = isAscending ? "昇順 ▼" : "降順 ▲";
+    renderCharacters();
+});
 
 maleCheckbox.addEventListener("change", renderCharacters);
 femaleCheckbox.addEventListener("change", renderCharacters);
