@@ -1,7 +1,7 @@
 const characters = [
-    { id: 1, name: "あただ", gender: "male", age: 20, str: 15, img: "画像/アイコン/1png" },
-    { id: 2, name: "なら", gender: "female", age: 25, str: 10, img: "画像/アイコン/3png" },
-    { id: 3, name: "ゆう", gender: "other", age: 30, str: 20, img: "画像/アイコン/4png" },
+    { id: 1, name: "あただ", gender: "male", age: 20, str: 15, img: "画像/アイコン/1.png" },
+    { id: 2, name: "なら", gender: "female", age: 25, str: 10, img: "画像/アイコン/3.png" },
+    { id: 3, name: "ゆう", gender: "other", age: 30, str: 20, img: "画像/アイコン/4.png" },
     { id: 4, name: "ぼうせいくろね", height :140, gender: "female", birthday "12/12", age: 32, occupation: "", STR: 7, CON: 8, POW:13,  DEX:17,  APP:17,  SIZ: 9, INT:12,  EDU: 14, img: "画像/アイコン/5png"},
     // 追加キャラクター
 ];
